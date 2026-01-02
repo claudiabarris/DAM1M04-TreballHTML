@@ -1,173 +1,277 @@
+:root {
+  --gold: #ffd700;
+  --dark-bg: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  min-height: 100vh;
-  font-family: "Open Sans", Arial, sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: var(--colorText);
   margin: 0;
-  padding-bottom: 80px; 
-}         
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0f2a 100%);
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
 
 
 
-/*  MENU SUPERIOR PARA TODAS LAS PÁGINAS*/
+/* VIDEO de fondo */
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+/* Video como fondo */
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  filter: brightness(0.5);
+}
+
+/* Oscurecer ligeramente el video (estilo Herobeat) */
+.video-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+
+
+
+/* TOPBAR para todas las paginas */
 .topbar {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 100;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between;  
-  padding: 0.9rem 1.5rem;
-  background-color: #c2c2c2;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.75);
-  
+  padding: 1.5rem 5%;
+  background: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(20px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold);
 }
 
 .menu {
   display: flex;
-  gap: 1.5rem;
-  margin-left: 2rem;             
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-
-/* Enlaces menú principal e interno */
-.menu a,
-.menu-interna a {
+.menu a {
+  color: #ffffff;
   text-decoration: none;
-  color: #000000;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  position: relative;
-  padding-bottom: 0.2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
 }
 
-.menu a::after,
-.menu-interna a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.2rem;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ff7a4f, #ffbf6b);
-  transition: width 0.25s;
+.menu a:hover {
+  color: var(--gold);
 }
 
-.menu a:hover::after,
-.menu-interna a:hover::after {
+/* CONTINGUT PRINCIPAL - Centrat com Herobeat */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8rem 5% 4rem;
+  text-align: center;
+}
+
+.hero-image {
   width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
-/* Checkbox y hamburguesa */
-.nav-toggle {
-  display: none;
+.main-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 0.22rem;
-  cursor: pointer;
+.subtitle {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  margin: 0 0 3rem;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-.hamburger span {
-  width: 22px;
-  height: 2px;
-  border-radius: 999px;
-  background: #b86fad;
-  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+/* DIV CENTRAL - Adaptat */
+.div {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-
-/*DIV BASE PARA TODOS LOS ESPACIOS*/
-.div{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 2%;
-    
+.div img {
+  width: 100vw;
+  height: auto;
+  margin-left: calc(-50vw + 50%);
+  border-radius: 0;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-/*Imagen grande general*/
-.div img{
-    width: 100%;
-    gap: 50%;
-    
+.div h1 {
+  font-size: 60px;
+  font-weight: 500px;
+  color: var(--gold);
+  margin: 2rem 0 1rem;
+  text-align: center;
 }
 
-.div h1{
-    font-family: "Nova Cut", system-ui;
-    font-size: 55px;
-    font-style: normal;
-    
-}
-
-
-.div h3{
-    font-family: "Nova Mono", monospace;
-    font-size: 20px;
-    font-style: normal;
-    margin-top: -1%;
+.div h3 {
+  font-size: 25px;
+  color: #d0d0d0;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
 }
 
 
-
-/*FOOTER PARA TODAS LAS PÁGINAS*/
+/* FOOTER - Exactament com Herobeat */
 .site-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #c5c5c5;
-  color: #f5f5f5;
-  padding: 0.8rem 1.5rem;
-  box-sizing: border-box;
-  z-index: 50; 
-}             
-
+  background: rgba(10,10,10,0.98);
+  color: #ffffff;
+  padding: 1.5rem 5%;
+  z-index: 50;
+}
 
 .footer-content {
-  width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.5rem;
-  padding-right: 1.5rem;    
+  gap: 0.8rem;
 }
 
-
-
 .footer-copy {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
 }
 
 .footer-social {
   display: flex;
-  gap: 0.7rem;
+  gap: 1.5rem;
 }
 
 .footer-social a {
-  color: #f5f5f5;
-  text-decoration: none;
-  display: inline-flex;
+  color: var(--gold);
+  font-size: 24px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/*CONTENEDOR PARA LAS CARTAS*/
+.div_cartas {
+  display: flex;
+  gap: 4%;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+
+/*canvio de color i escala*/
+.tarjeta {
+  flex: 1;                 /* mismo ancho */
+  height: 320px;           /* misma altura */
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: rgba(129, 37, 133, 0.288);
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  margin-bottom: 50px;
+}
+
+.tarjeta-imagen .carta_foto {
+  width: 100%;
+  height: 100%;
+  background-image: url("imatges/3a58241f35d8b9e0bd317fc8ffa4a0df_original.avif");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease, background-image 0.6s ease;
+}
+
+.tarjeta-imagen:hover .carta_foto {
+  background-image: url("imatges/3a58241f35d8b9e0bd317fc8ffa4a0df_original.avif");
+  transform: scale(1.08);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tarjeta-texto {
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
 }
 
-.footer-social a .material-icons {
+.tarjeta-texto p {
+  font-family: "Nova Mono", monospace;
   font-size: 20px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  margin: 0;
 }
 
-.footer-social a:hover .material-icons {
-  transform: translateY(-1px) scale(1.05);
-  color: #ff7a4f;
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menu {
+    gap: 1.5rem;
+  }
+  
+  .main-content {
+    padding: 4rem 2rem 2rem;
+  }
 }
