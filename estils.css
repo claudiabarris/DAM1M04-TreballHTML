@@ -1,0 +1,173 @@
+body {
+  min-height: 100vh;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--colorText);
+  margin: 0;
+  padding-bottom: 80px; 
+}         
+
+
+
+/*  MENU SUPERIOR PARA TODAS LAS PÁGINAS*/
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  padding: 0.9rem 1.5rem;
+  background-color: #c2c2c2;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.75);
+  
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: 2rem;             
+}
+
+
+/* Enlaces menú principal e interno */
+.menu a,
+.menu-interna a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.menu a::after,
+.menu-interna a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff7a4f, #ffbf6b);
+  transition: width 0.25s;
+}
+
+.menu a:hover::after,
+.menu-interna a:hover::after {
+  width: 100%;
+}
+
+/* Checkbox y hamburguesa */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.22rem;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #b86fad;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+
+/*DIV BASE PARA TODOS LOS ESPACIOS*/
+.div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2%;
+    
+}
+
+/*Imagen grande general*/
+.div img{
+    width: 100%;
+    gap: 50%;
+    
+}
+
+.div h1{
+    font-family: "Nova Cut", system-ui;
+    font-size: 55px;
+    font-style: normal;
+    
+}
+
+
+.div h3{
+    font-family: "Nova Mono", monospace;
+    font-size: 20px;
+    font-style: normal;
+    margin-top: -1%;
+}
+
+
+
+/*FOOTER PARA TODAS LAS PÁGINAS*/
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #c5c5c5;
+  color: #f5f5f5;
+  padding: 0.8rem 1.5rem;
+  box-sizing: border-box;
+  z-index: 50; 
+}             
+
+
+.footer-content {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding-right: 1.5rem;    
+}
+
+
+
+.footer-copy {
+  font-size: 0.8rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.footer-social a {
+  color: #f5f5f5;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social a .material-icons {
+  font-size: 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-social a:hover .material-icons {
+  transform: translateY(-1px) scale(1.05);
+  color: #ff7a4f;
+}
