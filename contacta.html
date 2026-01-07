@@ -24,14 +24,61 @@
          </div>
     </div>
 
-    <div class="div">
-        <h1>Nom del Joc</h1>
-        <h3>Subtitol </h3>
-    </div>
+    <main class="contact-container">
+    <h1 class="main-title">SHADOW</h1>
 
-    <div class="div">
-        Imatge del Joc
+    <div class="contact-grid">
+      <section class="contact-info">
+        <div class="info-card">
+          <span class="material-icons">place</span>
+          <p>Shadow Realm St, 123, 08001 Barcelona</p>
+        </div>
+        
+        <div class="info-card">
+          <span class="material-icons">phone</span>
+          <a href="tel:+34932000000">+34 932 000 000</a>
+        </div>
+
+        <div class="info-card">
+          <span class="material-icons">email</span>
+          <a href="mailto:info@castingshadows.com">info@castingshadows.com</a>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.438865060347!2d2.17691!3d41.3851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzA2LjQiTiAywrAxMCUzNi45IkU!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+      <section class="contact-form">
+        <form action="#">
+          <div class="form-group">
+            <input type="text" id="nombre" placeholder="Full Name" required pattern="^[A-Za-z\s]{3,}$">
+            <label for="nombre">Full Name</label>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="telefono" placeholder="Phone (9 digits)" required pattern="^[0-9]{9}$">
+            <label for="telefono">Phone Number</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <label for="email">Email Address</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="mensaje" placeholder="Your Request..." required minlength="10"></textarea>
+            <label for="mensaje">Your Request</label>
+          </div>
+
+          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        </form>
+      </section>
     </div>
+  </main>
 
     <div class="site-footer">
   <div class="footer-content">
