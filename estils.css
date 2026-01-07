@@ -486,3 +486,142 @@ body {
 
 
 
+/* ################# CSS ABOUT US ################# */
+
+.about-hero {
+  padding: 6rem 5% 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-hero .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px; /* Evita que la línea sea demasiado larga */
+}
+
+.glow-text {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 5rem 0;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.05), transparent);
+  transition: 0.5s;
+}
+
+.glass-card:hover::before {
+  left: 100%;
+}
+
+.glass-card:hover {
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gold);
+  color: #000;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.role-tag {
+  display: inline-block;
+  padding: 4px 15px;
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--gold);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* --- VIDEO SECTION --- */
+
+.video-container {
+  margin-top: 8rem;
+}
+
+.video-title {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-weight: 300;
+  font-size: 40px;
+  margin-bottom: 3rem;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.video-frame iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+@media (max-width: 768px) {
+  .glow-text {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  .about-hero .subtitle {
+    font-size: 2rem;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  .about-hero {
+    padding-top: 4rem;
+  }
+  .video-title {
+  font-size: 40px;
+}
+}
+
+/* ################# FIN CSS ABOUT US ################# */
