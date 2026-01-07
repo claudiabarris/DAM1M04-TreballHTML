@@ -20,7 +20,7 @@ body {
 }
 
 
-
+/* #################  PAGINA INICIO ################# */
 /* VIDEO de fondo */
 .video-hero {
   position: relative;
@@ -30,7 +30,6 @@ body {
 
 }
 
-/* Video como fondo */
 .video-bg {
   position: absolute;
   top: 50%;
@@ -43,7 +42,6 @@ body {
   filter: brightness(0.5);
 }
 
-/* Oscurecer ligeramente el video (estilo Herobeat) */
 .video-hero::after {
   content: "";
   position: absolute;
@@ -257,12 +255,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;           /* espacio entre elementos */
-  margin: 50px auto;   /* separación vertical más razonable */
   max-width: 1200px;
-  flex-wrap: wrap;     /* responsive */
   text-align: center;
   margin-bottom: -50px;
+  margin: auto;
 }
 
 
@@ -280,7 +276,7 @@ body {
 
 /* Imagenes HOW TO PLAY */
 .div_scroll img {
-  width: 150px;
+  width: 500px;
   height: auto;
 }
 
@@ -324,18 +320,23 @@ body {
 }
 
 .instructions h2 {
-  font-size: 32px;
+  font-size: 45px;
   margin-bottom: 1rem;
   color: var(--gold);
 }
 .instructions h3 {
-  font-size: 25px;
+  width: 60%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 28px;
   margin-bottom: 1rem;
   color: rgb(255, 255, 120);
 }
 
 .instructions p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto;
@@ -374,6 +375,27 @@ body {
   }
 }
 
+/* ################# FIN CSS PAGINA INICIO ################# */
+
+/* #################  CSS PAGINA INSTRUCCIONES ################# */
+.img_rules{
+  width: 100%;
+}
+.instructions h1{
+  font-size: 50px;
+  font-weight: 500px;
+  color: var(--gold);
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+.div_cartas2{
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  gap: 40px;                   
+  max-width: 1200px;           
+  margin: 0 auto 50px;         
+}
 
 
 
