@@ -1,52 +1,63 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  color-scheme: dark;
+  background: #000;
 }
 
 body {
-  min-height: 300vh;
-  background: #111;
+  min-height: 200vh; /* para que haya scroll */
+  margin: 0;
 }
 
-/* Espacio para generar scroll */
-.spacer {
+/* Sección que contiene el gráfico */
+.hero {
+  position: relative;
   height: 100vh;
+  overflow: hidden;
+  background: #000;
 }
 
-/* Sección que dispara la animación */
-.animacion {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* transición gif */
-.gif {
-  width: 100vw;
-  height: 100vh; /* opcional, puedes usar 50vh si no quieres pantalla completa */
-
-  background-image: url("imatges/transicion tinta.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  transform: translateX(-200px);
-  opacity: 0;
-
-  animation: mover linear both;
-  animation-timeline: view();
+/* El "rayo" verde */
+.ray {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200vw;
+  height: 120vh;
+  background: #c3ff00; /* ajusta al verde que quieras */
+  clip-path: polygon(
+    0% 100%,
+    5% 80%,
+    40% 60%,
+    100% 40%,
+    60% 55%,
+    15% 70%,
+    0% 90%
+  );
+  transform-origin: left center;
+  animation-name: ray-move;
+  animation-duration: 1s;       /* el tiempo lo controla el scroll */
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: view(block); /* se liga al scroll de la sección */
   animation-range: entry 0% exit 100%;
 }
-/* Animación lineal */
-@keyframes mover {
+
+/* Cómo se mueve el rayo al hacer scroll */
+@keyframes ray-move {
   from {
-    transform: translateX(-200px);
+    transform: translateX(-40%) scale(0.7) rotate(-5deg);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0%) scale(1) rotate(0deg);
     opacity: 1;
   }
+}
+
+/* Resto del contenido para seguir scrolleando */
+.contenido {
+  background: #020202;
+  color: #eee;
+  padding: 4rem 2rem;
+  font-family: system-ui, sans-serif;
 }
