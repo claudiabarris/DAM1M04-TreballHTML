@@ -14,11 +14,53 @@
 
 </head>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Scroll CSS</title>
 
-<section class="hero">
-  <div class="ray"></div>
-</section>
+<style>
+body {
+  height: 300vh;
+  margin: 0;
+  font-family: sans-serif;
+}
 
-<section class="contenido">
-  <p>Más contenido aquí…</p>
-</section>
+.div_scroll {
+  margin-top: 150vh;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(80px);
+
+  animation: fadeInUp linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Haz scroll</h1>
+
+<div class="div_scroll">
+  <h1 class="fade-in">HOW TO PLAY</h1>
+</div>
+
+</body>
+</html>

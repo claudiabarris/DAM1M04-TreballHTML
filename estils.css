@@ -270,6 +270,7 @@ body {
   text-align: center;
   margin-bottom: -50px;
   margin: auto;
+  
 }
 
 
@@ -277,13 +278,27 @@ body {
 .div_scroll .fade-in {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
+
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
 }
 
-.div_scroll .fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+
 
 /* Imagenes HOW TO PLAY */
 .div_scroll img {
